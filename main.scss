@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 $colors: (
-primary: #023867,
-primary-light: lighten(#023867, 40%),
-accent: #FCAE28
+    primary: #023867,
+    primary-light: lighten(#023867, 40%),
+    accent: #FCAE28
 );
 
 $font-main: 'Montserrat', 'sans-serif';
@@ -19,10 +19,6 @@ $mobile: 576px;
     }
 }
 
-// @function function-name($args) {
-//     @return value-to-be-returned;
-// }   // control + / to comment out a line
-
 @function color($color-name) {
     @return map-get($colors, $color-name);
 }
@@ -30,6 +26,7 @@ $mobile: 576px;
 body html {
     height: 100%;
 }
+
 body {
     font-family: $font-main;
     margin: 0;
@@ -59,13 +56,13 @@ body {
         text-transform: uppercase;
     }
 }
-main {
 
+main {
     @include tablet {
-           display: grid;
-           grid-template-columns: 50% auto;
-           grid-template-areas: "primary card";
-        }
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-areas: "primary card";
+    }
 
     section#card {
         background: #ffffff;
@@ -76,34 +73,37 @@ main {
         width: 80%;
 
         @include tablet {
-           grid-area: card;
-           height: fit-content;
-           align-self: center;
-           margin: 1em;
+            grid-area: card;
+            height: fit-content;
+            align-self: center;
+            margin: 1em;
         }
     }
+
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
-    
-    li {
-        margin-bottom: 10px;
 
-        span { // for the circles
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: color(primary-light);
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        strong {
-            display: inline-block;
-            margin-left: max(40px)
+        li {
+            margin-bottom: 10px;
+
+            span {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: color(primary-light);
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            strong {
+                display: inline-block;
+                margin-left: max(40px);
+            }
         }
     }
- }
+
     section#primary {
         color: #ffffff;
         padding: $padding;
@@ -115,6 +115,7 @@ main {
             margin: 4em 0 0 4em;
         }
     }
+
     h1 {
         font-size: 2em;
         margin-top: 10px;
@@ -126,6 +127,7 @@ main {
             line-height: 0.9em;
         }
     }
+
     a {
         color: color(primary);
         border-radius: $borders;
